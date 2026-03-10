@@ -196,6 +196,33 @@
             color: #ffffff;
             text-decoration: underline;
         }
+
+        footer a {
+            color: #ffffff;
+            text-decoration: underline;
+            text-decoration-color: #555;
+            transition: text-decoration-color 0.2s ease;
+        }
+
+        footer a:hover {
+            text-decoration-color: #ffffff;
+        }
+
+        .reddit-button {
+            display: inline-block;
+            background-color: #222;
+            color: #fff;
+            padding: 12px 28px;
+            text-decoration: none;
+            border-radius: 4px;
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            font-size: 0.95rem;
+            transition: background-color 0.2s ease;
+        }
+
+        .reddit-button:hover {
+            background-color: #444;
+        }
     </style>
 </head>
 <body>
@@ -593,8 +620,10 @@ We finish the chapter with the massive bottleneck at 17:00. -->
 
     <!-- Footer -->
     <footer>
-        <p class="disclosure">Transparency Note: The text descriptions for this archival project were articulated and structured with the assistance of an AI tool, based strictly on the photographer's original observations, memories, and historical context.</p>
-        <p class="sans" style="color: #ccc;">Photographs by Alexey Sergeev</p>
+        <p class="disclosure">Transparency Note: The narrative structure and text descriptions for this archival project were developed with the assistance of an AI tool. You can read the detailed methodology of how the archive was edited and sequenced on the <a href="under-the-hood.html">Under the Hood</a> page.</p>
+        <p class="sans" style="color: #ccc; margin-bottom: 1.5rem;">Photographs by Alexey Sergeev</p>
+        <!-- You will update this link once you create the Reddit post -->
+        <!-- a href="https://reddit.com/r/photography" target="_blank" class="reddit-button">Discuss this project on Reddit</a -->
     </footer>
 
 </body>

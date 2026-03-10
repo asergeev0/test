@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Under the Hood | The Human Foundation</title>
+    <style>
+        /* CSS Variables */
+        :root {
+            --bg-color: #0f0f0f;
+            --text-main: #e2e2e2;
+            --text-muted: #888888;
+            --accent-color: #cccccc;
+            --max-width-text: 720px;
+        }
+
+        /* Base Typography */
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            font-family: 'Georgia', serif;
+            line-height: 1.8;
+            margin: 0;
+            padding: 0;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        h1, h2, h3, .sans {
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            font-weight: 300;
+        }
+
+        /* Links */
+        a {
+            color: #ffffff;
+            text-decoration: underline;
+            text-decoration-color: #555;
+            transition: text-decoration-color 0.2s ease;
+        }
+
+        a:hover {
+            text-decoration-color: #ffffff;
+        }
+
+        /* Navigation / Back Link */
+        .nav-header {
+            max-width: var(--max-width-text);
+            margin: 0 auto;
+            padding: 2rem 24px;
+        }
+
+        .back-link {
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            text-decoration: none;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .back-link:hover {
+            color: #ffffff;
+            text-decoration: none;
+        }
+
+        /* Main Content Block */
+        .content-block {
+            max-width: var(--max-width-text);
+            margin: 4rem auto 8rem;
+            padding: 0 24px;
+        }
+        
+        h1 {
+            font-size: 2.8rem;
+            color: #ffffff;
+            line-height: 1.2;
+            margin-bottom: 0.5rem;
+        }
+
+        .subtitle {
+            font-size: 1.1rem;
+            color: var(--text-muted);
+            margin-bottom: 4rem;
+            letter-spacing: 0.5px;
+        }
+
+        h2 {
+            font-size: 1.8rem;
+            color: #ffffff;
+            margin: 3.5rem 0 1.5rem 0;
+            border-bottom: 1px solid #333;
+            padding-bottom: 0.5rem;
+        }
+
+        h3 {
+            font-size: 1.3rem;
+            color: var(--accent-color);
+            margin: 2rem 0 1rem 0;
+        }
+
+        p {
+            margin-bottom: 1.5rem;
+            font-size: 1.05rem;
+        }
+
+        ul {
+            margin-bottom: 2rem;
+            padding-left: 1.5rem;
+        }
+
+        li {
+            margin-bottom: 1rem;
+            font-size: 1.05rem;
+        }
+
+        /* Footer */
+        footer {
+            max-width: var(--max-width-text);
+            margin: 4rem auto 4rem;
+            padding: 3rem 24px 0;
+            border-top: 1px solid #333;
+            text-align: center;
+        }
+
+        .disclosure {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Top Navigation -->
+    <nav class="nav-header">
+        <a href="index.html" class="back-link">← Return to the main project</a>
+    </nav>
+
+    <main class="content-block">
+        <header>
+            <h1>Under the Hood</h1>
+            <div class="subtitle sans">Structuring a Documentary Archive with AI</div>
+        </header>
+
+        <section>
+            <p>This documentary project, <em>The Human Foundation</em>, is drawn from an archive of thousands of photographs taken in Doha, Qatar, between 2012 and 2015. While the photographs, historical context, and original observations belong entirely to the photographer, an AI assistant (Perplexity) was utilized in 2026 to help articulate, edit, and sequence these memories into a cohesive journalistic photo essay.</p>
+            <p>Initially, the AI was used to generate detailed, standalone descriptions for over 30 candidate photographs. However, as the descriptions accumulated, it became clear that a rigid editorial methodology was required to transform a raw archive into a flowing narrative. This page documents that process.</p>
+        </section>
+
+        <section>
+            <h2>1. Arriving at the Three-Chapter Structure</h2>
+            <p>As the initial batch of photos was processed, it became evident that the images naturally fell into three distinct geographic and thematic categories, representing the full lifecycle of the migrant experience in Doha. This realization led to a "three-act structure":</p>
+            <ul>
+                <li><strong>Chapter I: The Shadow of West Bay</strong> focused on the active physical labor, the massive scale of the megaprojects, and the rigid, color-coded hierarchies of the construction sites.</li>
+                <li><strong>Chapter II: The Erasure of Msheireb</strong> shifted the lens to the hidden living conditions, documenting the severe housing decay, displacement, and the encroachment of luxury development on the slums.</li>
+                <li><strong>Chapter III: The Respite of Al Ghanim</strong> concluded the narrative by exploring the workers' sole day of rest, focusing on their reclaimed identity, community building, and micro-economies.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>2. The "Macro / Micro" Captioning Methodology</h2>
+            <p>During the initial drafting phase, a significant problem emerged: repetition. Because each photo description was written to stand alone, the AI repeatedly included the same historical background (e.g., explaining the kafala system, the 10-hour shifts, or the fact that Friday was the only day of rest) in almost every caption.</p>
+            <p>To solve this, we implemented a "Macro / Micro" structural approach for each chapter:</p>
+            <ul>
+                <li><strong>The "Macro" Context (Chapter Introductions):</strong> All the recurring historical, political, and sociological background was extracted from the individual photo descriptions and synthesized into a single, punchy introductory paragraph at the start of each chapter. This explained the phenomenon once so it did not have to be repeated.</li>
+                <li><strong>The "Micro" Details (Streamlined Captions):</strong> Freed from the burden of explaining the overarching history, the individual photo captions were aggressively streamlined. Each photo was assigned a distinct <strong>Title</strong> and a specific <strong>Focus</strong> (e.g., "The digital lifeline" or "The vertical dichotomy of power"). The resulting captions focused purely on the unique visual evidence present in the frame—such as the color of a hard hat, a specific gesture, or the layout of an improvised flea market.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>3. The Filtering and Curation Process</h2>
+            <p>The most difficult phase of the project was editing down a large volume of high-quality photos. The photographer provided 34 fully described candidate photos. To prevent viewer fatigue and narrative repetition, the total was strictly capped at 22 photos.</p>
+            <p>To aid in the selection process, the photographer introduced an internal "Impact Rating" system (scaled 1 to 10) for each photo. The AI then grouped the photos by their "Focus" and selected the highest-rated image from each group, rejecting the rest. Here is how the final selection was made:</p>
+
+            <h3>Chapter I: West Bay (12 candidates → 9 selected, 3 rejected)</h3>
+            <p>We rejected three photos (<a href="images/westbay-1337-01.jpg" target="_blank">1337-01</a>, <a href="images/westbay-1539-02.jpg" target="_blank">1539-02</a>, and <a href="images/westbay-1540-04.jpg" target="_blank">1540-04</a>). Photo 1337-01 was discarded because it was a slightly less impactful, zoomed-in version of a highly-rated shot (1337-02) showing workers resting against a reflective glass facade. Photos 1539-02 and 1540-04 were discarded because they were visual duplicates of the 17:00 exit bottleneck; keeping them would have stalled the pacing of the chapter's conclusion.</p>
+
+            <h3>Chapter II: Msheireb (7 candidates → 4 selected, 3 rejected)</h3>
+            <p>We rejected three photos (<a href="images/msheireb-1325-03.jpg" target="_blank">1325-03</a>, <a href="images/msheireb-1328-19.jpg" target="_blank">1328-19</a>, and <a href="images/msheireb-1383-08.jpg" target="_blank">1383-08</a>). All three of these images featured close-ups of crumbling walls covered in handwritten signs, flyers, or eviction notices. While historically interesting, they were visually redundant when placed next to each other. We retained the four most visually distinct images: a wide architectural juxtaposition, a ruined interior, a humanizing detail (the "QATAR ♥ I" door), and a portrait of displaced workers.</p>
+
+            <h3>Chapter III: Al Ghanim (15 candidates → 9 selected, 6 rejected)</h3>
+            <p>This chapter required the heaviest editing. We rejected six photos (<a href="images/alghanim-1016-22.jpg" target="_blank">1016-22</a>, <a href="images/alghanim-1016-23.jpg" target="_blank">1016-23</a>, <a href="images/alghanim-1039-16.jpg" target="_blank">1039-16</a>, <a href="images/alghanim-1219-21.jpg" target="_blank">1219-21</a>, <a href="images/alghanim-1039-12.jpg" target="_blank">1039-12</a>, and <a href="images/alghanim-1039-07.jpg" target="_blank">1039-07</a>). Many of these were wide-angle shots of the massive crowds on the grass. We eliminated the lower-rated wide shots to avoid repeating the exact same visual information. Notably, photo 1039-12 (despite a high rating of 8) was discarded because it was virtually the exact same scene as the ultimate establishing shot (1039-14), just at a slightly different focal length. By clearing out the duplicates, we made room for highly specific micro-narratives, such as the improvised flea market and men sharing a mobile phone screen.</p>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p class="disclosure">Meta-Note: The structure and content of this very web page—summarizing the collaborative workflow between the photographer and the AI assistant—was also generated by the AI based on the sequence of the preceding editorial prompts.</p>
+    </footer>
+
+</body>
+</html>
